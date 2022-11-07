@@ -2,11 +2,12 @@ let express = require('express');
 let router = express.Router();
 let movieList = [];
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.send(movieList);
 });
-  
-app.post('/', (req, res) => {
+
+// request to /movie/add (changed in client.js)
+router.post('/add', (req, res) => {
     movieList.push(req.body);
     res.sendStatus(200);
 });

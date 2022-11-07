@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 // >>>>>>>
 let bookRouter = require('./routes/book_router.js');
+// >>>>>>>
 let movieRouter = require('./routes/movie_router.js');
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 // When server receives a request at /book, use the bookRouter
 // >>>>>>>
 app.use('/book', bookRouter);
+// >>>>>>>>
 app.use('/movie', movieRouter);
 
 // Start server listening on PORT

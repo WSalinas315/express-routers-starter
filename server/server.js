@@ -3,11 +3,12 @@ const bodyParser = require('body-parser');
 
 // >>>>>>>
 let bookRouter = require('./routes/book_router.js');
+let movieRouter = require('./routes/movie_router.js');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 //const bookList = [];
-const movieList = [];
+//const movieList = [];
 
 // express static file serving - public is the folder name
 app.use( express.static('server/public') );
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 // When server receives a request at /book, use the bookRouter
 // >>>>>>>
 app.use('/book', bookRouter);
+app.use('/movie', movieRouter);
 
 // Start server listening on PORT
 app.listen(PORT, () => {
@@ -35,11 +37,11 @@ app.listen(PORT, () => {
 //   res.sendStatus(200);
 // });
 
-app.get('/movie', (req, res) => {
-  res.send(movieList);
-});
+// app.get('/movie', (req, res) => {
+//   res.send(movieList);
+// });
 
-app.post('/movie', (req, res) => {
-  movieList.push(req.body);
-  res.sendStatus(200);
-});
+// app.post('/movie', (req, res) => {
+//   movieList.push(req.body);
+//   res.sendStatus(200);
+// });

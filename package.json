@@ -4,9 +4,8 @@
   "description": "Routers (routing modules) can be used to organize code.",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
